@@ -1,48 +1,46 @@
-let elem = document.getElementById('qwe123');
+let url1 = "https://yaroslav7125.github.io/SPA.io/ajax/first.html";
+let url2 = "http://localhost:3000/ajax/main-ajax-screen.html";
+let url3 = "http://localhost:3000/ajax/second-ajax-screen.html";
+let elem = document.getElementById('mainContainer-ajax');
+let MainAjaxContainer= document.getElementById('mainContainer-ajax');
 elem.style.color = 'red';
 
-function makeRequest(url) {
-    alert("makeRequest")
-    var httpRequest = false;
 
-    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
-        httpRequest = new XMLHttpRequest();
-        if (httpRequest.overrideMimeType) {
-            httpRequest.overrideMimeType('text/xml');
-            // Читайте ниже об этой строке
-        }
-    } else if (window.ActiveXObject) { // IE
-        try {
-            httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
-            try {
-                httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
-            } catch (e) {}
-        }
+let xhttp = new XMLHttpRequest();
+
+
+xhttp.onreadystatechange = function(){
+    if(this.readyState==4&&this.status == 200){  // если ответ от сервера есть и он хороший - 20
+        myFunction(this.responseText); // тогда вызываем функцию myFunction
     }
-
-    if (!httpRequest) {
-        alert('Не вышло :( Невозможно создать экземпляр класса XMLHTTP ');
-        return false;
-    }
-    httpRequest.onreadystatechange = function() { alertContents(httpRequest); };
-    httpRequest.open('GET', url, true);
-    httpRequest.send(null);
-
 }
 
-function alertContents(httpRequest) {
+/* console.log("make xhttp");
+xhttp.open("Get", "https://yaroslav7125.github.io/SPA.io/ajax/first.html");
+xhttp.send(); */
 
-    if (httpRequest.readyState == 4) {
-        if (httpRequest.status == 200) {
-            alert(httpRequest.responseText);
-        } else {
-            alert('С запросом возникла проблема.');
-        }
-    }
+let number = 1;
 
+let myFunction = data => {
+    console.log(data+ `${number++}`);
+    let elm = document.getElementById("main-container");
+    console.log(elm);
+    elm.innerHTML = data;
+    
+
+
+}
+let makeGetRequest = uri =>{
+    xhttp.open("Get", uri);
+    xhttp.send();
 }
 
 
 
-alert("done");
+let callFucnk = ()=>{
+    makeGetRequest(`${url2}`);
+} 
+
+
+
+
