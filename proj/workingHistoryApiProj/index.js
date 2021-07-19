@@ -8,6 +8,7 @@ links = {
     main:"This is the <strong>main</strong> page" ,
     about:"This is the <strong>about</strong> page",
     downloads:"This is the <strong>downloads</strong> page",
+    '': "PUSTO",
 };
 
 updatestate = function(state){
@@ -18,7 +19,9 @@ updatestate = function(state){
 // window.addEventListener("hashchange", updatestate);
 // window.addEventListener('load', updatestate);
 window.addEventListener('popstate', function(e){
-    updatestate(e.state);
+    updatestate({
+        page: window.location.pathname.replace('/', ''),
+    });
 });
 
 updatebuttons = function(state){
@@ -35,6 +38,7 @@ updatebuttons = function(state){
 
 navEl.addEventListener('click', function(e){
     var state;
+    // debugger
     if(e.target.tagName !=="A")return;
     state = {
         page:e.target.getAttribute('href')
