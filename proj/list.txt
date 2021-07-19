@@ -1,0 +1,11 @@
+https://www.youtube.com/results?search_query=history+api
+https://betacode.net/12403/javascript-history-api
+https://cdn.rawgit.com/o7planning/webexamples/master/javascript/history/pushState-example.html
+https://cdn.rawgit.com/o7planning/webexamples/master/javascript/history/hash-example.html#test4
+https://css-tricks.com/using-the-html5-history-api/
+https://css-tricks.com/examples/State/egon.php
+https://habr.com/ru/post/123106/
+http://diveintohtml5.info/history.html
+http://diveintohtml5.info/examples/history/gallery/willie.html
+https://html.spec.whatwg.org/multipage/history.html
+https://habr.com/ru/post/144071/
