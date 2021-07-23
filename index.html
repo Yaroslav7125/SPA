@@ -6,12 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+    <div id="app2" v-bind:title="massage" >
+      <span >kjdansdnaksdn</span>  
+    </div>
     <div id="app">
         {{ message }}
       </div>
-      <button click = 'bclick()'></button>
+  <div id="app3">
+      <span v-if="seen">меня видно</span>
+      <span v-if="seen2">меня видно2</span>
+</div>
       <script src="./index.js"></script>
 </body>
 </html>
