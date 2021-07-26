@@ -31,6 +31,7 @@ export default{
     methods:{
         removeTodo(id){
             this.$emit('remove-todo', id)
+            console.log('from TodoList:'+id)
         }
     }
 }
@@ -39,6 +40,9 @@ export default{
 
 <style scoped>
 ul{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding: 0;

@@ -6,7 +6,7 @@
             <strong>{{todoStr.id}}</strong>
             {{todoStr.titile}}
         </span>
-        <button class="rm" v-on:click="$emit('remove-todo', todoStr.id)">&times;</button>
+        <button class="rm" v-on:click="deleteMe(todoStr, todoStr.id)">&times;</button>
         <!-- <strong>{{todoStr.titile}}</strong> -->
         <!--  
         <span>
@@ -35,6 +35,13 @@ export default{
             type: Object,
             required:true,
         }
+    },
+    methods:{
+        deleteMe:function(Str, id){
+            console.log(Str + id);
+            this.$emit('remove-todo', Str.id)
+
+        }, //$emit('removeTodo', todoStr.id)
     }
 }
 
@@ -47,6 +54,7 @@ li{
     justify-content: space-between;
     padding: .5rem 2rem;
     margin-bottom: 1rem;
+    width: 500px;
 }
 
 .rm{ /* описываем кнопку*/

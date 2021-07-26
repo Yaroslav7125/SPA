@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Todo application</h1>
+    <h1>todo app</h1>
     
     <AddTodo
     v-on:addtodo="addTodo"
@@ -23,7 +23,7 @@
      -->
     <TodoList 
       v-bind:todos="todos" 
-      @remove-todo="removeTodo"    
+      v-on:remove-todo="removeTodo"    
     />
   </div>
 </template>
@@ -36,9 +36,9 @@ export default {
   data(){
     return{
       todos:[
-        {id:1, titile:'купить хлеб', completed:false},
-        {id:2, titile:'купить пиво', completed:false},
-        {id:3, titile:'купить масло', completed:false},
+        {id:1, titile:'asdasdasd', completed:false},
+        {id:2, titile:'asdasdasdasdasd', completed:false},
+        {id:3, titile:'asdasdasdasdad', completed:false},
         
       ],
       delforAddTodo: "hello, I'm here",

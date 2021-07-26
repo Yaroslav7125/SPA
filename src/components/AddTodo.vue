@@ -1,6 +1,6 @@
 <template>
-    <form v-on:submit.prevent="onSubmit" >
-        <input type="text" v-model='title'>
+    <form v-on:submit.prevent="onSubmit" > <!-- -->
+        <input type="text"  v-model = "title">
         <button type="submit">Create</button>
         
     </form>
@@ -10,23 +10,23 @@ export default{
 
 
     methods:{
-        onSubmit(){
+        onSubmit:function(){
            console.log(this.title)
-            if(this.title.trim()){
-                const newTodo ={
-                    id:Data.now(),
+            if(this.title){
+                let newTodo = {
+                    id:Date.now(),
                     title:this.title,
                     completed:false,
                 };
+                alert(newTodo)
                 this.$emit('addtodo', newTodo); // прописываем событие add-todo с отправкой в другой компонент обьектка newTodo
-
             }
         }
     }, 
 
     data(){
         return{
-            title:''
+            title:'asddasdad1'
         }
     }
 }
@@ -36,7 +36,8 @@ export default{
 <style scoped>
 form{
     display: flex;
-
+    justify-content: center;
+    margin-bottom: 25px;
 }
 input{
     width:400px;
